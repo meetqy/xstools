@@ -20,18 +20,18 @@ const CardItem = ({
       radius="md"
       shadow="none"
       isPressable
-      className="aspect-square relative w-28 z-10 bg-transparent select-none group hover:bg-content2/70 cursor-default transition-all"
+      className="aspect-square relative w-28 z-10 bg-transparent select-none cursor-default"
       onPress={() => router.push(url)}
     >
       <CardHeader className="pb-0">
         <Image
           src={icon}
-          className="w-8/12 aspect-square m-auto"
+          className="w-9/12 aspect-square m-auto"
           draggable={false}
         />
       </CardHeader>
       <CardFooter className="justify-center px-0">
-        <p className="capitalize truncate text-small text-default-50 group-hover:text-default-foreground transition-all">
+        <p className="capitalize truncate text-small text-default-50">
           {title}
         </p>
       </CardFooter>
