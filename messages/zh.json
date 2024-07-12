@@ -1,0 +1,19 @@
+{
+  "ConvertCaseText": {
+    "title": "文本大小写转换",
+    "description": "只需输入文本并选择要转换的大小写。",
+    "sentence-case": "段落首字母大写",
+    "lower-case": "全小写",
+    "upper-case": "全大写",
+    "capitalized-case": "首字母大写",
+    "alternating-case": "交替大小写",
+    "title-case": "标题大小写",
+    "inverse-case": "反转大小写",
+    "download-text": "下载文本",
+    "copy-to-clipboard": "复制到剪贴板",
+    "clear": "清除"
+  },
+  "AppName": {
+    "convert-case-text": "文本大小写转换"
+  }
+}

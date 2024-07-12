@@ -1,0 +1,19 @@
+{
+  "ConvertCaseText": {
+    "title": "Convert Case Text",
+    "description": "Simply enter your text and choose the case you want to convert it to.",
+    "sentence-case": "Sentence case",
+    "lower-case": "lower case",
+    "upper-case": "UPPER CASE",
+    "capitalized-case": "Capitalized Case",
+    "alternating-case": "aLtErNaTiNg cAsE",
+    "title-case": "Title Case",
+    "inverse-case": "InVeRsE CaSe",
+    "download-text": "Download Text",
+    "copy-to-clipboard": "Copy to Clipboard",
+    "clear": "Clear"
+  },
+  "AppName": {
+    "convert-case-text": "Convert Case Text"
+  }
+}
