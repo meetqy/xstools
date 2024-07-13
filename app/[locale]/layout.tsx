@@ -10,6 +10,7 @@ import { Screen } from "../screen";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Toaster } from "react-hot-toast";
+import { Dock } from "../dock";
 
 export const metadata: Metadata = {
   title: {
@@ -61,6 +62,7 @@ export default async function RootLayout({
             {modal}
             <Screen />
             <Toaster />
+            <Dock />
           </Providers>
         </NextIntlClientProvider>
       </body>

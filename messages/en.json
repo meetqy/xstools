@@ -15,5 +15,9 @@
   },
   "AppName": {
     "convert-case-text": "Convert Case Text"
+  },
+  "About": {
+    "title": "About XsTools",
+    "description": "XsTools is a collection of free online tools that you can use to perform various tasks. The tools are designed to be simple and easy to use."
   }
 }
