@@ -49,12 +49,6 @@ export function Screen() {
         title={t("convert-case-text")}
         url="/convert-case-text"
       />
-
-      <CardItem
-        icon="/icons/about-xstools.svg"
-        title="About XsTools"
-        url="/about-xstools"
-      />
     </div>
   );
 }
