@@ -25,7 +25,7 @@ export function ModalPage(props: {
       isDismissable={false}
       placement="top"
       backdrop="transparent"
-      className="md:aspect-video bg-content1"
+      className="md:aspect-video bg-content1/90 backdrop-blur-md"
     >
       <ModalContent>
         {() => (

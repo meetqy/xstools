@@ -78,7 +78,7 @@ export default function App() {
         isDismissable={false}
         placement="top"
         backdrop="transparent"
-        className="bg-background/90 backdrop-blur md:aspect-video"
+        className="bg-content1/90 backdrop-blur-md md:aspect-video"
       >
         <ModalContent>
           {() => (
