@@ -20,7 +20,7 @@ const CardItem = ({
       radius="md"
       shadow="none"
       isPressable
-      className="aspect-square relative w-28 z-10 bg-transparent select-none cursor-default"
+      className="aspect-square relative w-28 z-10 bg-transparent select-none"
       onPress={() => router.push(url)}
     >
       <CardHeader className="pb-0">
