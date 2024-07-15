@@ -27,9 +27,9 @@
     "title": "从图像中提取调色板",
     "color-palette": "调色板",
     "drag-file-s-here-or-click-to-browse": "将文件拖至此处或单击浏览",
-    "hex": "十六进制",
-    "rgb": "RGB",
-    "rgb-number": "RGB数",
+    "hex": "hex",
+    "rgb": "rgb",
+    "rgb-number": "rgb 数值",
     "tips": "单击颜色值可快速复制到剪贴板",
     "empty": "暂无颜色"
   }
