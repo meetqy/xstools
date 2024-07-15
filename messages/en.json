@@ -14,11 +14,16 @@
     "clear": "Clear"
   },
   "AppName": {
-    "convert-case-text": "Convert Case Text"
+    "convert-case-text": "Convert Case Text",
+    "extract-palette-from-image": "Extract Palette From Image"
   },
   "About": {
     "title": "About XsTools",
     "description": "XsTools is a collection of free online tools that you can use to perform various tasks. The tools are designed to be simple and easy to use.",
     "language": "Language"
+  },
+  "ExtractPalettleFromImage": {
+    "title": "Extract Palettle From Image",
+    "description": "Extract the color palette from an image. Select the image and get the color group of the image immediately. No need to worry about privacy."
   }
 }

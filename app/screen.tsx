@@ -42,13 +42,21 @@ const CardItem = ({
 export function Screen() {
   const t = useTranslations("AppName");
 
+  const apps = ["convert-case-text", "extract-palette-from-image"];
+
   return (
     <div className="gap-4 flex flex-col p-4">
-      <CardItem
-        icon="/icons/convert-case-text.svg"
-        title={t("convert-case-text")}
-        url="/convert-case-text"
-      />
+      {apps.map((item) => {
+        return (
+          <CardItem
+            key={item}
+            icon={`/icons/${item}.svg`}
+            // @ts-ignore
+            title={t(item)}
+            url={`/${item}`}
+          />
+        );
+      })}
     </div>
   );
 }

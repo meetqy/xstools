@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "xs.tools - A Tools Web App System",
+  name: "xs.tools - A Web Tools System",
   description: "xs tools web system.",
   links: {
     github: "https://github.com/nextui-org/nextui",
