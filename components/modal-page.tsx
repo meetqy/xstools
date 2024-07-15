@@ -26,6 +26,7 @@ export function ModalPage(props: {
       placement="top"
       backdrop="transparent"
       className="md:aspect-video bg-content1/90 backdrop-blur-md"
+      scrollBehavior="inside"
     >
       <ModalContent>
         {() => (

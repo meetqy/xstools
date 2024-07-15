@@ -24,6 +24,13 @@
   },
   "ExtractPalettleFromImage": {
     "title": "Extract Palettle From Image",
-    "description": "Extract the color palette from an image. Select the image and get the color group of the image immediately. No need to worry about privacy."
+    "description": "Extract the color palette from an image. Select the image and get the color group of the image immediately. No need to worry about privacy.",
+    "drag-file-s-here-or-click-to-browse": "Drag file(s) here or click to browse",
+    "color-palette": "Color Palette",
+    "rgb": "Rgb",
+    "hex": "Hex",
+    "rgb-number": "Rgb Number",
+    "tips": "Click the color values to quickly copy to the clipboard",
+    "empty": "No Color Palette"
   }
 }
