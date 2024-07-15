@@ -46,25 +46,25 @@ export default async function RootLayout({
   return (
     <html suppressHydrationWarning lang={locale}>
       <head />
-      <NextIntlClientProvider messages={messages}>
-        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <body
-            className={clsx(
-              "h-screen bg-background font-sans antialiased w-screen overflow-hidden bg-cover text-foreground",
-              fontSans.variable
-            )}
-            style={{
-              backgroundImage: `url(https://images.unsplash.com/photo-1718348636186-5620c97d4c1f?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`,
-            }}
-          >
+      <body
+        className={clsx(
+          "h-screen bg-background font-sans antialiased w-screen overflow-hidden bg-cover text-foreground",
+          fontSans.variable
+        )}
+        style={{
+          backgroundImage: `url(https://images.unsplash.com/photo-1718348636186-5620c97d4c1f?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`,
+        }}
+      >
+        <NextIntlClientProvider messages={messages}>
+          <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
             {children}
             {modal}
             <Screen />
             <Toaster />
             <Dock />
-          </body>
-        </Providers>
-      </NextIntlClientProvider>
+          </Providers>
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }
