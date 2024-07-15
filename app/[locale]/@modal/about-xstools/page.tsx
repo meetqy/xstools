@@ -54,7 +54,7 @@ export default function App() {
             }}
             variant="bordered"
           >
-            {languages[locale].map((lang) => (
+            {languages[locale]?.map((lang) => (
               <SelectItem
                 key={lang.abbr}
                 value={lang.abbr}
