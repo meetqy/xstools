@@ -97,9 +97,9 @@ export default function App() {
         <div className="col-span-2">
           <Table aria-label="color palette">
             <TableHeader>
-              <TableColumn>{t("color-palette")}</TableColumn>
-              <TableColumn>{t("rgb")}</TableColumn>
-              <TableColumn>{t("hex")}</TableColumn>
+              <TableColumn className="w-1/4">{t("color-palette")}</TableColumn>
+              <TableColumn className="w-2/4">{t("rgb")}</TableColumn>
+              <TableColumn className="w-1/4">{t("hex")}</TableColumn>
               <TableColumn>{t("hsl")}</TableColumn>
             </TableHeader>
             <TableBody emptyContent={t("empty")}>
