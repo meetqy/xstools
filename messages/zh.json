@@ -29,7 +29,7 @@
     "drag-file-s-here-or-click-to-browse": "将文件拖至此处或单击浏览",
     "hex": "hex",
     "rgb": "rgb",
-    "rgb-number": "rgb 数值",
+    "hsl": "hsl",
     "tips": "单击颜色值可快速复制到剪贴板",
     "empty": "暂无颜色"
   }

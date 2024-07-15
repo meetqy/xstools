@@ -14,10 +14,11 @@ import {
 import { useTranslations } from "next-intl";
 import { useEffect, useMemo, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { prominent } from "color.js";
 import { cn } from "@/utils/cn";
 import Color from "color";
 import toast from "react-hot-toast";
+import { extractColors } from "extract-colors";
+import { FinalColor } from "extract-colors/lib/types/Color";
 
 export default function App() {
   const t = useTranslations("ExtractPalettleFromImage");
@@ -28,7 +29,7 @@ export default function App() {
       "image/jpeg": [".jpeg", ".png", ".jpg", ".webp"],
     },
   });
-  const [palette, setPalette] = useState<number[][]>();
+  const [palette, setPalette] = useState<FinalColor[]>();
 
   const file = useMemo(() => {
     if (acceptedFiles.length === 0) return null;
@@ -41,11 +42,9 @@ export default function App() {
     const getPalette = async () => {
       if (!file) return setPalette(undefined);
 
-      const palette = await prominent(file, {
-        amount: 5,
-      });
+      const palette = await extractColors(file);
 
-      setPalette(palette as number[][]);
+      setPalette(palette);
     };
 
     getPalette();
@@ -101,41 +100,37 @@ export default function App() {
               <TableColumn>{t("color-palette")}</TableColumn>
               <TableColumn>{t("rgb")}</TableColumn>
               <TableColumn>{t("hex")}</TableColumn>
-              <TableColumn>{t("rgb-number")}</TableColumn>
+              <TableColumn>{t("hsl")}</TableColumn>
             </TableHeader>
             <TableBody emptyContent={t("empty")}>
               {!palette
                 ? []
-                : palette.map((color, index) => (
+                : palette?.map((color, index) => (
                     <TableRow key={index}>
                       <TableCell>
                         <div
                           className="w/1/2 h-8 rounded-full"
                           style={{
-                            backgroundColor: Color.rgb(color).string(),
+                            backgroundColor: color.hex,
                           }}
                         />
                       </TableCell>
                       <TableCell
                         onClick={() =>
-                          copyToClipboard(`rgb(${color.join(",")})`)
+                          copyToClipboard(Color(color.hex).rgb().string())
                         }
                       >
-                        {"rgb("}
-                        {color.join(",")}
-                        {")"}
+                        {Color(color.hex).rgb().string()}
                       </TableCell>
-                      <TableCell
-                        onClick={() => copyToClipboard(Color.rgb(color).hex())}
-                      >
-                        {Color.rgb(color).hex()}
+                      <TableCell onClick={() => copyToClipboard(color.hex)}>
+                        {color.hex}
                       </TableCell>
                       <TableCell
                         onClick={() =>
-                          copyToClipboard(`${Color.rgb(color).rgbNumber()}`)
+                          copyToClipboard(Color(color.hex).hsl().toString())
                         }
                       >
-                        {Color.rgb(color).rgbNumber()}
+                        {Color(color.hex).hsl().toString()}
                       </TableCell>
                     </TableRow>
                   ))}
