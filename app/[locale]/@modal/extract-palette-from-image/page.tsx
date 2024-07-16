@@ -66,11 +66,11 @@ export default function App() {
         </>
       }
     >
-      <section className="w-full h-full grid grid-cols-3 gap-4">
+      <section className="w-full h-full grid grid-cols-1 md:grid-cols-3 gap-4">
         <div
           {...getRootProps({ className: "dropzone" })}
           className={cn(
-            "w-full overflow-hidden flex flex-col justify-center items-center bg-content2 rounded-medium border-dashed border",
+            "w-full overflow-hidden flex py-4 md:py-0 flex-col justify-center items-center bg-content2 rounded-medium border-dashed border",
             file ? "border-primary-200" : "border-default-300"
           )}
         >
