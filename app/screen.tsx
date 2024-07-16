@@ -20,13 +20,13 @@ const CardItem = ({
       radius="md"
       shadow="none"
       isPressable
-      className="aspect-square relative w-28 z-10 bg-transparent select-none"
+      className="aspect-square relative md:w-28 w-24 z-10 bg-transparent select-none"
       onPress={() => router.push(url)}
     >
       <CardHeader className="pb-0">
         <Image
           src={icon}
-          className="w-9/12 aspect-square m-auto"
+          className="w-9/12 aspect-square m-auto shadow-medium"
           draggable={false}
         />
       </CardHeader>
@@ -45,7 +45,7 @@ export function Screen() {
   const apps = ["convert-case-text", "extract-palette-from-image"];
 
   return (
-    <div className="gap-4 flex flex-col p-4">
+    <div className="gap-4 flex p-4">
       {apps.map((item) => {
         return (
           <CardItem

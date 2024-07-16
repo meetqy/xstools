@@ -7,7 +7,7 @@ export const Dock = () => {
   const router = useRouter();
 
   return (
-    <header className="h-16 fixed bottom-2 left-0 w-full">
+    <header className="h-16 fixed bottom-2 left-0 w-full md:px-0 px-4">
       <div className="mx-auto max-w-xl bg-background/50 backdrop-blur-sm h-full shadow-medium rounded-medium flex items-center p-2 gap-2">
         <Card
           isPressable
