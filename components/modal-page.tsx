@@ -1,5 +1,3 @@
-"use client";
-
 import { useRouter } from "@/navigation";
 import {
   Modal,
