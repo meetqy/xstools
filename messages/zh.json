@@ -2,7 +2,7 @@
   "AppName": {
     "convert-case-text": "文本大小写转换",
     "extract-palette-from-image": "从图像中提取调色板",
-    "ai-slug-generator": "AI Slug 生成器"
+    "ai-slug-generator": "AI URL-Slug 生成器"
   },
   "About": {
     "description": "把常用的小工具做成一个系统。",
@@ -35,10 +35,10 @@
     "empty": "暂无颜色"
   },
   "AiSlugGenerator": {
-    "description": "自动为您的内容创建 SEO 友好的 URL Slug。",
-    "title": "AI 生成 URL Slug",
+    "description": "自动为您的内容创建 SEO 友好的 URL-Slug。",
+    "title": "AI 生成 URL-Slug",
     "copy-to-clipboard": "复制到剪贴板",
-    "placeholder": "输入需要 URL Slug 的内容。\n最大长度：50",
+    "placeholder": "输入需要 URL-Slug 的内容。\n最大长度：50",
     "generator": "开始生成"
   }
 }

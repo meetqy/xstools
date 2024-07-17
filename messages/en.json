@@ -2,7 +2,7 @@
   "AppName": {
     "convert-case-text": "Convert Case Text",
     "extract-palette-from-image": "Extract Palette From Image",
-    "ai-slug-generator": "AI Slug Generator"
+    "ai-slug-generator": "AI URL-Slug Generator"
   },
   "About": {
     "title": "About XsTools",
@@ -35,10 +35,10 @@
     "empty": "No Color Palette"
   },
   "AiSlugGenerator": {
-    "title": "AI Slug Generator",
-    "description": "Automatically Create SEO-Friendly URL Slug for Your Content.",
+    "title": "AI URL-Slug Generator",
+    "description": "Automatically Create SEO-Friendly URL-Slug for Your Content.",
     "generator": "Generator",
     "copy-to-clipboard": "Copy to Clipboard",
-    "placeholder": "Enter the content that requires URL Slug. \nmax length: 50"
+    "placeholder": "Enter the content that requires URL-Slug. \nmax length: 50"
   }
 }
