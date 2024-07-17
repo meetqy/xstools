@@ -72,10 +72,10 @@ export const publicProcedure = coreProcedure.use(({ ctx, next }) => {
   // 判断 ip 是否在白名单
   const ip = ctx.headers.get("x-real-ip") || ctx.headers.get("x-forwarded-for");
   if (!ip) {
-    throw new Error("ip not found");
+    throw new Error("ip not found, now ip: " + ip);
   }
   if (!whiteList.some((host) => ip.includes(host))) {
-    throw new Error("ip not in white list");
+    throw new Error("ip not in white list, now ip: " + ip);
   }
 
   return next();
