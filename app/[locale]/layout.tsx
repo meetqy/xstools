@@ -20,9 +20,13 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  icons: {
-    icon: "/favicon.ico",
-  },
+  manifest: "/manifest.json",
+  viewport:
+    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
+  icons: [
+    { rel: "apple-touch-icon", url: "app-images/ios/128.png" },
+    { rel: "favicon", url: "favicon.ico" },
+  ],
 };
 
 export const viewport: Viewport = {
