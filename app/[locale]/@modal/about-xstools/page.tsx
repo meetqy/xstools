@@ -37,7 +37,7 @@ export default function App() {
         </>
       }
     >
-      <div className="grid grid-cols-3 p-2">
+      <div className="grid md:grid-cols-3 p-2">
         <div className="flex items-center gap-2">
           <Select
             label={t("language")}
