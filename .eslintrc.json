@@ -34,7 +34,6 @@
   },
   "rules": {
     "react/jsx-no-literals": "warn",
-    "no-console": "warn",
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",

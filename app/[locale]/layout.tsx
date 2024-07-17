@@ -11,6 +11,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Toaster } from "react-hot-toast";
 import { Dock } from "../dock";
+import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
   title: {
@@ -55,15 +56,19 @@ export default async function RootLayout({
           backgroundImage: `url(https://images.unsplash.com/photo-1718348636186-5620c97d4c1f?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`,
         }}
       >
-        <NextIntlClientProvider messages={messages}>
-          <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-            {children}
-            {modal}
-            <Screen />
-            <Toaster />
-            <Dock />
-          </Providers>
-        </NextIntlClientProvider>
+        <TRPCReactProvider>
+          <NextIntlClientProvider messages={messages}>
+            <Providers
+              themeProps={{ attribute: "class", defaultTheme: "light" }}
+            >
+              {children}
+              {modal}
+              <Screen />
+              <Toaster />
+              <Dock />
+            </Providers>
+          </NextIntlClientProvider>
+        </TRPCReactProvider>
       </body>
     </html>
   );
