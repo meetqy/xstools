@@ -14,6 +14,7 @@ export function ModalPage(props: {
   children?: React.ReactNode;
   header?: React.ReactNode;
   footer?: React.ReactNode;
+  style?: React.CSSProperties;
 }) {
   const router = useRouter();
 
@@ -27,6 +28,7 @@ export function ModalPage(props: {
       backdrop="transparent"
       className="md:aspect-video bg-content1/90 backdrop-blur-md"
       scrollBehavior="inside"
+      style={props.style}
     >
       <ModalContent>
         {() => (
