@@ -36,6 +36,8 @@
   },
   "AiSlugGenerator": {
     "title": "AI Slug Generator",
-    "description": "Automatically Create SEO-Friendly URLs for Your Content."
+    "description": "Automatically Create SEO-Friendly URLs for Your Content.",
+    "generator": "Generator",
+    "copy-to-clipboard": "Copy to Clipboard"
   }
 }

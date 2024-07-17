@@ -10,18 +10,7 @@ import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
-/**
- * 1. CONTEXT
- *
- * This section defines the "contexts" that are available in the backend API.
- *
- * These allow you to access things when processing a request, like the database, the session, etc.
- *
- * This helper generates the "internals" for a tRPC context. The API handler and RSC clients each
- * wrap this and provides the required context.
- *
- * @see https://trpc.io/docs/server/context
- */
+const whiteList = ["xstools.vercel.app", "::1", "xs.tools"];
 export const createTRPCContext = async (opts: { headers: Headers }) => {
   return {
     ...opts,
@@ -70,6 +59,8 @@ export const createCallerFactory = t.createCallerFactory;
  */
 export const createTRPCRouter = t.router;
 
+const coreProcedure = t.procedure;
+
 /**
  * Public (unauthenticated) procedure
  *
@@ -77,4 +68,15 @@ export const createTRPCRouter = t.router;
  * guarantee that a user querying is authorized, but you can still access user session data if they
  * are logged in.
  */
-export const publicProcedure = t.procedure;
+export const publicProcedure = coreProcedure.use(({ ctx, next }) => {
+  // 判断 ip 是否在白名单
+  const ip = ctx.headers.get("x-real-ip") || ctx.headers.get("x-forwarded-for");
+  if (!ip) {
+    throw new Error("ip not found");
+  }
+  if (!whiteList.some((host) => ip.includes(host))) {
+    throw new Error("ip not in white list");
+  }
+
+  return next();
+});

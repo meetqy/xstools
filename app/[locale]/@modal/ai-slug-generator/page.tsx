@@ -2,11 +2,26 @@
 
 import { ModalPage } from "@/components/modal-page";
 import { api } from "@/trpc/react";
+import { Button, Textarea } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
+import { useMemo, useState } from "react";
 
 export default function App() {
   const t = useTranslations("AiSlugGenerator");
-  const { data } = api.aiSlugGenerator.hello.useQuery({ text: "123" });
+  const [text, setText] = useState("");
+
+  const run = api.aiSlugGenerator.run.useMutation({});
+
+  const result = useMemo(() => {
+    if (run.isPending) return "Generating...";
+    if (run.data) return run.data.join("").replace(/\//g, "");
+
+    return "generate-content-url-slug";
+  }, [run]);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(result);
+  };
 
   return (
     <ModalPage
@@ -19,7 +34,38 @@ export default function App() {
         </>
       }
     >
-      {data?.greeting}
+      <>
+        <div className="grid md:grid-cols-2 gap-4">
+          <Textarea
+            label="Title"
+            placeholder="Enter the content that requires URL SLUG. max length: 50"
+            value={text}
+            variant="faded"
+            color="primary"
+            size="lg"
+            onValueChange={(e) => setText(e)}
+          />
+          <Textarea
+            label="URL SLUG"
+            variant="bordered"
+            readOnly
+            size="lg"
+            value={result}
+          />
+        </div>
+        <div className="flex justify-end gap-4 md:flex-row flex-col">
+          <Button variant="bordered" color="primary" onClick={copyToClipboard}>
+            {t("copy-to-clipboard")}
+          </Button>
+          <Button
+            color="primary"
+            isDisabled={!text && !run.isPending}
+            onClick={() => run.mutate(text)}
+          >
+            {t("generator")}
+          </Button>
+        </div>
+      </>
     </ModalPage>
   );
 }
