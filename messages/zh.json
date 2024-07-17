@@ -35,7 +35,10 @@
     "empty": "暂无颜色"
   },
   "AiSlugGenerator": {
-    "description": "自动为您的内容创建 SEO 友好的 URL。",
-    "title": "AI 弹头生成器"
+    "description": "自动为您的内容创建 SEO 友好的 URL Slug。",
+    "title": "AI 生成 URL Slug",
+    "copy-to-clipboard": "复制到剪贴板",
+    "placeholder": "输入需要 URL Slug 的内容。\n最大长度：50",
+    "generator": "开始生成"
   }
 }

@@ -5,6 +5,7 @@ import { api } from "@/trpc/react";
 import { Button, Textarea } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function App() {
   const t = useTranslations("AiSlugGenerator");
@@ -21,6 +22,7 @@ export default function App() {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(result);
+    toast.success(t("copy-to-clipboard"));
   };
 
   return (
@@ -38,7 +40,7 @@ export default function App() {
         <div className="grid md:grid-cols-2 gap-4">
           <Textarea
             label="Title"
-            placeholder="Enter the content that requires URL SLUG. max length: 50"
+            placeholder={t("placeholder")}
             value={text}
             variant="faded"
             color="primary"
