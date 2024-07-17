@@ -10,7 +10,7 @@ export const aiSlugGenerator = createTRPCRouter({
       const output = await replicate.run("meta/meta-llama-3-70b-instruct", {
         input: {
           top_p: 0.9,
-          prompt: `text format url slug. only return url slug. Don't answer any questions. text: "${input}"`,
+          prompt: `Generate an English url slug based on the title, require SEO friendly, contain keywords, only return url slug. Don't answer any questions. title: "${input}"`,
           min_tokens: 0,
           temperature: 0.6,
           prompt_template:
