@@ -2,8 +2,9 @@
 
 import { ModalPage } from "@/components/modal-page";
 import { Link } from "@/navigation";
+import dynamic from "next/dynamic";
 
-export default function NotFound() {
+function NotFound() {
   return (
     <html lang="en">
       <body>
@@ -48,3 +49,5 @@ export default function NotFound() {
     </html>
   );
 }
+
+export default dynamic(() => Promise.resolve(NotFound), { ssr: false });
