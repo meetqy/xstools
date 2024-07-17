@@ -1,5 +1,6 @@
 "use client";
 
+import { Head } from "@/components/head";
 import { ModalPage } from "@/components/modal-page";
 import { Link } from "@/navigation";
 import dynamic from "next/dynamic";
@@ -7,6 +8,7 @@ import dynamic from "next/dynamic";
 function NotFound() {
   return (
     <html lang="en">
+      <Head />
       <body>
         <main className="relative isolate min-h-screen">
           <img

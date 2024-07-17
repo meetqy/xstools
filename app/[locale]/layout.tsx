@@ -12,6 +12,7 @@ import { getMessages } from "next-intl/server";
 import { Toaster } from "react-hot-toast";
 import { Dock } from "../dock";
 import { TRPCReactProvider } from "@/trpc/react";
+import { Head } from "@/components/head";
 
 export const metadata: Metadata = {
   title: {
@@ -46,7 +47,7 @@ export default async function RootLayout({
 
   return (
     <html suppressHydrationWarning lang={locale}>
-      <head />
+      <Head />
       <body
         className={clsx(
           "h-screen bg-background font-sans antialiased w-screen overflow-hidden bg-cover text-foreground",
