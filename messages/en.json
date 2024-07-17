@@ -1,7 +1,17 @@
 {
+  "AppName": {
+    "convert-case-text": "Convert Case Text",
+    "extract-palette-from-image": "Extract Palette From Image",
+    "ai-slug-generator": "AI Slug Generator"
+  },
+  "About": {
+    "title": "About XsTools",
+    "description": "Make a system of commonly used gadgets.",
+    "language": "Language"
+  },
   "ConvertCaseText": {
     "title": "Convert Case Text",
-    "description": "Simply enter your text and choose the case you want to convert it to.",
+    "description": " Easily Change Text Case for Better Readability and Consistency",
     "sentence-case": "Sentence case",
     "lower-case": "lower case",
     "upper-case": "UPPER CASE",
@@ -13,18 +23,9 @@
     "copy-to-clipboard": "Copy to Clipboard",
     "clear": "Clear"
   },
-  "AppName": {
-    "convert-case-text": "Convert Case Text",
-    "extract-palette-from-image": "Extract Palette From Image"
-  },
-  "About": {
-    "title": "About XsTools",
-    "description": "Make a system of commonly used gadgets.",
-    "language": "Language"
-  },
   "ExtractPalettleFromImage": {
     "title": "Extract Palettle From Image",
-    "description": "Extract the color palette from an image. Select the image and get the color group of the image immediately. No need to worry about privacy.",
+    "description": "Effortlessly Generate Color Palettes for Your Designs.",
     "drag-file-s-here-or-click-to-browse": "Drag file(s) here or click to browse",
     "color-palette": "Color Palette",
     "rgb": "rgb",
@@ -32,5 +33,9 @@
     "hsl": "hsl",
     "tips": "Click the color values to quickly copy to the clipboard",
     "empty": "No Color Palette"
+  },
+  "AiSlugGenerator": {
+    "title": "AI Slug Generator",
+    "description": "Automatically Create SEO-Friendly URLs for Your Content."
   }
 }

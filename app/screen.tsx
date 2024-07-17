@@ -42,7 +42,11 @@ const CardItem = ({
 export function Screen() {
   const t = useTranslations("AppName");
 
-  const apps = ["convert-case-text", "extract-palette-from-image"];
+  const apps = [
+    "convert-case-text",
+    "extract-palette-from-image",
+    "ai-slug-generator",
+  ];
 
   return (
     <div className="gap-4 flex p-4">

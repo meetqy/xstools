@@ -1,4 +1,14 @@
 {
+  "AppName": {
+    "convert-case-text": "文本大小写转换",
+    "extract-palette-from-image": "从图像中提取调色板",
+    "ai-slug-generator": "AI Slug 生成器"
+  },
+  "About": {
+    "description": "把常用的小工具做成一个系统。",
+    "language": "语言",
+    "title": "关于 XsTools"
+  },
   "ConvertCaseText": {
     "title": "文本大小写转换",
     "description": "只需输入文本并选择要转换的大小写。",
@@ -13,17 +23,8 @@
     "copy-to-clipboard": "复制到剪贴板",
     "clear": "清除"
   },
-  "AppName": {
-    "convert-case-text": "文本大小写转换",
-    "extract-palette-from-image": "从图像中提取调色板"
-  },
-  "About": {
-    "description": "把常用的小工具做成一个系统。",
-    "language": "语言",
-    "title": "关于 XsTools"
-  },
   "ExtractPalettleFromImage": {
-    "description": "从图像中提取调色板。\n选择图像并立即获取图像的颜色组。\n无需担心隐私问题。",
+    "description": "轻松为您的设计生成调色板。",
     "title": "从图像中提取调色板",
     "color-palette": "调色板",
     "drag-file-s-here-or-click-to-browse": "将文件拖至此处或单击浏览",
@@ -32,5 +33,9 @@
     "hsl": "hsl",
     "tips": "单击颜色值可快速复制到剪贴板",
     "empty": "暂无颜色"
+  },
+  "AiSlugGenerator": {
+    "description": "自动为您的内容创建 SEO 友好的 URL。",
+    "title": "AI 弹头生成器"
   }
 }
