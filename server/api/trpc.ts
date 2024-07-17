@@ -69,13 +69,13 @@ const coreProcedure = t.procedure;
  * are logged in.
  */
 export const publicProcedure = coreProcedure.use(({ ctx, next }) => {
-  // 判断 ip 是否在白名单
-  const ip = ctx.headers.get("x-real-ip") || ctx.headers.get("x-forwarded-for");
-  if (!ip) {
-    throw new Error("ip not found, now ip: " + ip);
+  // 判断 host 是否在白名单
+  const host = ctx.headers.get("host");
+  if (!host) {
+    throw new Error("host not found, now host: " + host);
   }
-  if (!whiteList.some((host) => ip.includes(host))) {
-    throw new Error("ip not in white list, now ip: " + ip);
+  if (!whiteList.some((host) => host.includes(host))) {
+    throw new Error("host not in white list, now host: " + host);
   }
 
   return next();
