@@ -34,7 +34,11 @@ export default function NotFound() {
                   href="/"
                   className="text-sm font-semibold leading-7 text-white"
                 >
-                  <span aria-hidden="true">&larr;</span> {"Back to home"}
+                  <span
+                    aria-hidden="true"
+                    dangerouslySetInnerHTML={{ __html: "&larr;" }}
+                  />{" "}
+                  {"Back to home"}
                 </Link>
               </div>
             </div>
