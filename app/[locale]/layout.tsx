@@ -21,8 +21,6 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   manifest: "/manifest.json",
-  viewport:
-    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
   icons: [
     { rel: "apple-touch-icon", url: "app-images/ios/128.png" },
     { rel: "favicon", url: "favicon.ico" },
@@ -34,6 +32,10 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
+  minimumScale: 1,
+  initialScale: 1,
+  width: "device-width",
+  viewportFit: "cover",
 };
 
 export default async function RootLayout({
