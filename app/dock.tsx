@@ -2,8 +2,7 @@
 
 import { useRouter } from "@/navigation";
 import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
-import { Icon } from "@iconify/react";
-import { Button, Card, Image } from "@nextui-org/react";
+import { Card, Image } from "@nextui-org/react";
 
 export const Dock = () => {
   const router = useRouter();
