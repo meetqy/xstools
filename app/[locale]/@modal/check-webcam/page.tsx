@@ -1,4 +1,5 @@
 "use client";
+
 import { ModalPage } from "@/components/modal-page";
 import { useTranslations } from "next-intl";
 

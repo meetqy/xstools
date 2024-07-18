@@ -3,7 +3,8 @@
     "convert-case-text": "Convert Case Text",
     "extract-palette-from-image": "Extract Palette From Image",
     "ai-slug-generator": "AI url-slug Generator",
-    "check-webcam": "Check Webcam"
+    "check-webcam": "Check Webcam",
+    "length-unit-converter": "Length Unit Converter"
   },
   "About": {
     "title": "xs.tools",
