@@ -46,6 +46,7 @@ export function Screen() {
     "convert-case-text",
     "extract-palette-from-image",
     "ai-slug-generator",
+    "check-webcam",
   ];
 
   return (

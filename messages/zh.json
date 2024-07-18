@@ -2,12 +2,13 @@
   "AppName": {
     "convert-case-text": "文本大小写转换",
     "extract-palette-from-image": "从图像中提取调色板",
-    "ai-slug-generator": "AI url-slug 生成器"
+    "ai-slug-generator": "AI url-slug 生成器",
+    "check-webcam": "检查网络摄像头"
   },
   "About": {
-    "description": "把常用的小工具做成一个系统。",
+    "description": "提供一系列实用的小工具，帮助你轻松解决各种日常问题",
     "language": "语言",
-    "title": "关于 XsTools"
+    "title": "xs.tools"
   },
   "ConvertCaseText": {
     "title": "文本大小写转换",
@@ -40,5 +41,9 @@
     "copy-to-clipboard": "复制到剪贴板",
     "placeholder": "输入需要 url-slug 的内容。\n最大长度：50",
     "generator": "开始生成"
+  },
+  "CheckWebcam": {
+    "description": "立即测试并验证您的网络摄像头的功能",
+    "title": "检查网络摄像头"
   }
 }
