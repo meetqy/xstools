@@ -43,7 +43,7 @@
     "generator": "开始生成"
   },
   "CheckWebcam": {
-    "description": "立即测试并验证您的网络摄像头的功能",
+    "description": "在线检查摄像头是否损坏",
     "title": "检查网络摄像头"
   }
 }

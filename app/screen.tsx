@@ -26,6 +26,7 @@ const CardItem = ({
       <CardHeader className="pb-0">
         <Image
           src={icon}
+          alt={icon.split("-").join(" ")}
           className="w-9/12 aspect-square m-auto shadow-medium"
           draggable={false}
         />

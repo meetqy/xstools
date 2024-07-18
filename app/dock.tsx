@@ -13,6 +13,7 @@ export const Dock = () => {
         <Card
           isPressable
           className="w-12 h-12 p-0 bg-transparent"
+          aria-label="about xs tools"
           onPress={() => router.push("/about-xstools")}
         >
           <Image src="/icons/about-xstools.svg" className="w-full h-full" />
@@ -20,8 +21,16 @@ export const Dock = () => {
         <div className="flex justify-center items-center">
           <SignedOut>
             <SignInButton>
-              <Card isPressable className="w-12 h-12 p-0 bg-transparent">
-                <Image src="/icons/profile.svg" className="w-full h-full" />
+              <Card
+                aria-label="SignIn button"
+                isPressable
+                className="w-12 h-12 p-0 bg-transparent"
+              >
+                <Image
+                  alt="SignIn button"
+                  src="/icons/profile.svg"
+                  className="w-full h-full"
+                />
               </Card>
             </SignInButton>
           </SignedOut>
