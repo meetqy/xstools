@@ -12,6 +12,7 @@
     "node": ">=20"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.2.4",
     "@nextui-org/react": "^2.4.2",
     "@react-aria/ssr": "3.9.4",
     "@react-aria/visually-hidden": "3.8.12",

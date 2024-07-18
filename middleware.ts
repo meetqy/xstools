@@ -1,21 +1,48 @@
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import createMiddleware from "next-intl/middleware";
 import { locales } from "./config/locale";
+import { NextFetchEvent, NextRequest } from "next/server";
 
-export default createMiddleware({
-  // A list of all locales that are supported
+const intlMiddleware = createMiddleware({
   locales: locales,
   localePrefix: "as-needed",
-  // Used when no locale matches
   defaultLocale: "en",
   localeDetection: false,
 });
 
+const isProtectedRoute = createRouteMatcher([
+  "/dashboard(.*)",
+  "/:locale/dashboard(.*)",
+]);
+
+export default function middleware(
+  request: NextRequest,
+  event: NextFetchEvent
+) {
+  if (
+    request.nextUrl.pathname.includes("/sign-in") ||
+    request.nextUrl.pathname.includes("/sign-up") ||
+    isProtectedRoute(request)
+  ) {
+    return clerkMiddleware((auth, req) => {
+      if (isProtectedRoute(req)) {
+        const locale =
+          req.nextUrl.pathname.match(/(\/.*)\/dashboard/)?.at(1) ?? "";
+
+        const signInUrl = new URL(`${locale}/sign-in`, req.url);
+
+        auth().protect({
+          unauthenticatedUrl: signInUrl.toString(),
+        });
+      }
+
+      return intlMiddleware(req);
+    })(request, event);
+  }
+
+  return intlMiddleware(request);
+}
+
 export const config = {
-  // Match only internationalized pathnames
-  matcher: [
-    "/",
-    "/((?!api|_next|_vercel|.*\\..*).*)",
-    "/([\\w-]+)?/users/(.+)",
-    "/(zh|en)/:path*",
-  ],
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 };
