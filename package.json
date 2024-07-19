@@ -25,6 +25,7 @@
     "extract-colors": "^4.0.6",
     "framer-motion": "~11.1.9",
     "intl-messageformat": "^10.5.0",
+    "mathjs": "^13.0.2",
     "next": "14.2.3",
     "next-intl": "^3.17.0",
     "next-themes": "^0.2.1",

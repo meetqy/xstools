@@ -3,7 +3,8 @@
     "convert-case-text": "文本大小写转换",
     "extract-palette-from-image": "从图像中提取调色板",
     "ai-slug-generator": "AI url-slug 生成器",
-    "check-webcam": "检查网络摄像头"
+    "check-webcam": "检查网络摄像头",
+    "length-unit-converter": "长度单位转换器"
   },
   "About": {
     "description": "提供一系列实用的小工具，帮助你轻松解决各种日常问题",
@@ -45,5 +46,35 @@
   "CheckWebcam": {
     "description": "在线检查摄像头是否损坏",
     "title": "检查网络摄像头"
+  },
+  "LengthUnitConverter": {
+    "title": "长度单位转换器",
+    "description": "快速转换不同长度单位",
+    "metric-system": "公制",
+    "british-system": "英制",
+    "the-chinese-system-of-weights-and-measures": "中国的重量和度量衡系统",
+    "kilometre": "千米",
+    "meter": "米",
+    "decimeter": "分米",
+    "centimeter": "厘米",
+    "millimeter": "毫米",
+    "micrometer": "微米",
+    "nanometer": "纳米",
+    "picometer": "皮米",
+    "nautical-mile": "海里",
+    "fathom": "英寻",
+    "foot": "英尺",
+    "inch": "英寸",
+    "mile": "英里",
+    "furlong": "弗隆",
+    "yard": "码",
+    "mil": "密尔",
+    "gong-li": "公里",
+    "zhang": "丈",
+    "chi": "尺",
+    "cun": "寸",
+    "fen": "分",
+    "li": "里",
+    "hao": "毫"
   }
 }

@@ -46,5 +46,35 @@
   "CheckWebcam": {
     "title": "Check Webcam",
     "description": "Instantly Test and Verify Your Webcam’s Functionality"
+  },
+  "LengthUnitConverter": {
+    "title": "Length Unit Converter",
+    "description": "Quickly Convert Between Different Units of Length",
+    "metric-system": "Metric System",
+    "british-system": "British System",
+    "the-chinese-system-of-weights-and-measures": "The Chinese system of weights and measures",
+    "kilometre": "kilometre",
+    "meter": "meter",
+    "decimeter": "decimeter",
+    "centimeter": "centimeter",
+    "millimeter": "millimeter",
+    "micrometer": "micrometer",
+    "nanometer": "nanometer",
+    "picometer": "picometer",
+    "nautical-mile": "nautical mile",
+    "fathom": "fathom",
+    "foot": "foot",
+    "inch": "inch",
+    "mile": "mile",
+    "furlong": "furlong",
+    "yard": "yard",
+    "mil": "mil",
+    "gong-li": "公里",
+    "zhang": "丈",
+    "chi": "尺",
+    "cun": "寸",
+    "fen": "分",
+    "li": "里",
+    "hao": "毫"
   }
 }
