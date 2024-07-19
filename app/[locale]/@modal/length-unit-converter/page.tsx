@@ -105,7 +105,7 @@ export default function Page() {
     >
       <div className="space-y-4">
         <p className="border-b text-primary">{t("metric-system")}</p>
-        <section className="grid grid-cols-4 gap-4">
+        <section className="grid md:grid-cols-4 grid-cols-2 gap-4">
           {Object.keys(metric).map((key) => {
             const item = unit[key as Unit];
 
@@ -125,7 +125,7 @@ export default function Page() {
         </section>
 
         <p className="border-b text-primary">{t("british-system")}</p>
-        <section className="grid grid-cols-4 gap-4">
+        <section className="grid md:grid-cols-4 grid-cols-2 gap-4">
           {Object.keys(british).map((key) => {
             const item = british[key as Unit];
 
@@ -147,7 +147,7 @@ export default function Page() {
         <p className="border-b text-primary">
           {t("the-chinese-system-of-weights-and-measures")}
         </p>
-        <section className="grid grid-cols-4 gap-4">
+        <section className="grid md:grid-cols-4 grid-cols-2 gap-4">
           {Object.keys(chinese).map((key) => {
             const item = chinese[key as Unit];
 
