@@ -8,14 +8,14 @@ import { useTranslations } from "next-intl";
 
 const _metric = ["km", "m", "dm", "cm", "mm", "um", "nm", "pm"];
 const _british = ["nmi", "fm", "ft", "in", "mi", "fur", "yd", "mil"];
-const _chinese = ["gongli", "zhang", "chi", "cun", "fen", "li", "hao"];
+const _chinese = ["li3", "zhang", "chi", "cun", "fen", "li", "hao"];
 
 export default function Page() {
   const t = useTranslations("LengthUnitConverter");
 
   // 长度单位
   const [unit, setUnit] = useState({
-    km: { value: "", name: t("kilometre"), ratio: 1e-3 },
+    km: { value: "", name: t("kilometre"), ratio: 0.001 },
     m: { value: "", name: t("meter"), ratio: 1 },
     dm: { value: "", name: t("decimeter"), ratio: 1e1 },
     cm: { value: "", name: t("centimeter"), ratio: 1e2 },
@@ -33,13 +33,13 @@ export default function Page() {
     yd: { value: "", name: t("yard"), ratio: 1 / 0.9144 },
     mil: { value: "", name: t("mil"), ratio: 1 / 0.0000254 },
     // Chinese
-    gongli: { value: "", name: t("gong-li"), ratio: 1e-3 },
-    zhang: { value: "", name: t("zhang"), ratio: 1 / 10 },
-    chi: { value: "", name: t("chi"), ratio: 1 },
-    cun: { value: "", name: t("cun"), ratio: 10 },
-    fen: { value: "", name: t("fen"), ratio: 100 },
-    li: { value: "", name: t("li"), ratio: 1000 },
-    hao: { value: "", name: t("hao"), ratio: 10000 },
+    li3: { value: "", name: t("li3"), ratio: 0.002 },
+    zhang: { value: "", name: t("zhang"), ratio: 3 / 10 },
+    chi: { value: "", name: t("chi"), ratio: 3 },
+    cun: { value: "", name: t("cun"), ratio: 30 },
+    fen: { value: "", name: t("fen"), ratio: 300 },
+    li: { value: "", name: t("li"), ratio: 3000 },
+    hao: { value: "", name: t("hao"), ratio: 30000 },
   });
 
   type Unit = keyof typeof unit;
