@@ -37,12 +37,13 @@ export default function App() {
         </>
       }
     >
-      <div className="grid md:grid-cols-3 p-2">
+      <div className="grid md:grid-cols-4 grid-cols-2 p-2">
         <div className="flex items-center gap-2">
           <Select
             label={t("language")}
             placeholder="Select language"
             size="lg"
+            labelPlacement="outside"
             startContent={
               <Icon icon="lucide:languages" className="w-6 h-6 text-primary" />
             }
