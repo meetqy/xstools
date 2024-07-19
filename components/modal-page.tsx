@@ -18,6 +18,7 @@ export function ModalPage(props: {
   header?: React.ReactNode;
   footer?: React.ReactNode;
   style?: React.CSSProperties;
+  size?: "5xl" | "full";
 }) {
   const router = useRouter();
   const [settings, setSettings] = useLocalStorage<Setting>("settings", {
@@ -28,7 +29,7 @@ export function ModalPage(props: {
     <Modal
       defaultOpen
       onClose={() => setTimeout(() => router.replace("/"), 300)}
-      size={settings.modal_full ? "full" : "5xl"}
+      size={props.size || (settings.modal_full ? "full" : "5xl")}
       isDismissable={false}
       placement="top"
       backdrop="transparent"
@@ -44,22 +45,24 @@ export function ModalPage(props: {
           <>
             <ModalHeader className="flex flex-col gap-1">
               <div className="absolute top-0 right-0 flex">
-                <Button
-                  isIconOnly
-                  size="sm"
-                  variant="light"
-                  onClick={() =>
-                    setSettings({ modal_full: !settings.modal_full })
-                  }
-                >
-                  <Icon
-                    icon={
-                      settings.modal_full
-                        ? "material-symbols:fullscreen-exit"
-                        : "material-symbols:fullscreen-exit"
+                {!props.size && (
+                  <Button
+                    isIconOnly
+                    size="sm"
+                    variant="light"
+                    onClick={() =>
+                      setSettings({ modal_full: !settings.modal_full })
                     }
-                  />
-                </Button>
+                  >
+                    <Icon
+                      icon={
+                        settings.modal_full
+                          ? "material-symbols:fullscreen-exit"
+                          : "material-symbols:fullscreen-exit"
+                      }
+                    />
+                  </Button>
+                )}
 
                 <Button isIconOnly size="sm" variant="light" color="danger">
                   <Icon icon="material-symbols:close" />
