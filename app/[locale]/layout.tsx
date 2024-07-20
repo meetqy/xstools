@@ -2,21 +2,21 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
-import { Providers } from "../providers";
+import { Providers } from "./_components/providers";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
-import { Screen } from "../screen";
+import { Screen } from "./_components/screen";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Toaster } from "react-hot-toast";
-import { Dock } from "../dock";
+import { Dock } from "./_components/dock";
 import { TRPCReactProvider } from "@/trpc/react";
 import { Head } from "@/components/head";
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: siteConfig.name + " - Website as System, Tools as Applications",
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,

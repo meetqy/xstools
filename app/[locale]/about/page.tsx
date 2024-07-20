@@ -3,5 +3,5 @@ import {
   InitializePage,
 } from "@/components/initialize-page";
 
-export const metadata = InitializeMetadata("convert-case-text");
+export const metadata = InitializeMetadata("about");
 export default InitializePage;

@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "xs.tools - Website as System, Tools as Applications",
+  name: "xs.tools",
   description:
     "We offer a series of practical tools to help you effortlessly solve various daily problems.",
   links: {
