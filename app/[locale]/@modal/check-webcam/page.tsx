@@ -4,6 +4,7 @@ import { ModalPage } from "@/components/modal-page";
 import { Button, Select, SelectItem } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function App() {
   const t = useTranslations("CheckWebcam");
@@ -13,9 +14,18 @@ export default function App() {
   const [selectedWebcam, setSelectedWebcam] = useState<string>();
 
   useEffect(() => {
-    navigator.mediaDevices.enumerateDevices().then((devices) => {
-      setWebcam(devices.filter((device) => device.kind === "videoinput"));
-    });
+    navigator.mediaDevices
+      .getUserMedia({
+        video: true,
+      })
+      .then((_stream) => {
+        navigator.mediaDevices.enumerateDevices().then((devices) => {
+          setWebcam(devices.filter((device) => device.kind === "videoinput"));
+        });
+      })
+      .catch(() => {
+        toast.error("Please allow the camera access to continue.");
+      });
   }, []);
 
   const getUserMedia = async () => {
