@@ -45,7 +45,9 @@
   },
   "CheckWebcam": {
     "title": "Check Webcam",
-    "description": "Instantly Test and Verify Your Webcam’s Functionality"
+    "description": "Instantly Test and Verify Your Webcam’s Functionality",
+    "stop-webcam": "Stop webcam",
+    "check-my-webcam": "Check my webcam"
   },
   "LengthUnitConverter": {
     "title": "Length Unit Converter",
