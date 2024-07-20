@@ -10,13 +10,20 @@ export default function App() {
 
   // 用来做选项的
   const [webcam, setWebcam] = useState<MediaDeviceInfo[]>([]);
+  const [selectedWebcam, setSelectedWebcam] = useState<string>();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [stream, setStream] = useState<MediaStream>();
-  const [selectedWebcam, setSelectedWebcam] = useState<string>();
 
   const getWebcam = async () => {
     navigator.mediaDevices.enumerateDevices().then((devices) => {
-      setWebcam(devices.filter((device) => device.kind === "videoinput"));
+      const videoDevices = devices.filter(
+        (device) => device.kind === "videoinput"
+      );
+
+      if (videoDevices.length > 0) {
+        setSelectedWebcam(videoDevices[0].deviceId);
+        setWebcam(videoDevices);
+      }
     });
   };
 
@@ -34,6 +41,7 @@ export default function App() {
         video: {
           width: videoRef.current?.clientWidth,
           height: videoRef.current?.clientHeight,
+          deviceId: selectedWebcam,
         },
       });
 
@@ -92,8 +100,8 @@ export default function App() {
                   const stream = await getStream();
                   if (stream) {
                     stream.getTracks().forEach((track) => track.stop());
-                    setStream(undefined);
                     getWebcam();
+                    setStream(undefined);
                   }
                 }}
               >
@@ -112,7 +120,7 @@ export default function App() {
             <Select
               label={t("select-a-webcam")}
               aria-label={t("select-a-webcam")}
-              value={selectedWebcam}
+              selectedKeys={[selectedWebcam ?? ""]}
               onChange={(e) => setSelectedWebcam(e.target.value)}
               size="sm"
               variant="bordered"
@@ -124,11 +132,8 @@ export default function App() {
                 </SelectItem>
               ))}
             </Select>
-            {stream ? (
-              <Button onPress={stopStream} color="warning" fullWidth>
-                {t("stop-webcam")}
-              </Button>
-            ) : (
+
+            {selectedWebcam && !stream && (
               <Button
                 onPress={getUserMedia}
                 color="primary"
@@ -136,6 +141,12 @@ export default function App() {
                 fullWidth
               >
                 {t("check-my-webcam")}
+              </Button>
+            )}
+
+            {stream && (
+              <Button onPress={stopStream} color="warning" fullWidth>
+                {t("stop-webcam")}
               </Button>
             )}
           </div>
