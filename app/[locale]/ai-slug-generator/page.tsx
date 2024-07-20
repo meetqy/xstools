@@ -3,5 +3,6 @@ import {
   InitializePage,
 } from "@/components/initialize-page";
 
-export const metadata = InitializeMetadata("ai-slug-generator");
+export const generateMetadata = async () =>
+  InitializeMetadata("ai-slug-generator");
 export default InitializePage;

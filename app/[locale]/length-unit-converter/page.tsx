@@ -3,5 +3,7 @@ import {
   InitializePage,
 } from "@/components/initialize-page";
 
-export const metadata = InitializeMetadata("length-unit-converter");
+export const generateMetadata = async () =>
+  await InitializeMetadata("length-unit-converter");
+
 export default InitializePage;

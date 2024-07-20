@@ -3,5 +3,5 @@ import {
   InitializePage,
 } from "@/components/initialize-page";
 
-export const metadata = InitializeMetadata("check-webcam");
+export const generateMetadata = async () => InitializeMetadata("check-webcam");
 export default InitializePage;
