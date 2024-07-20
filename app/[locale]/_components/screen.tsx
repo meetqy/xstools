@@ -20,16 +20,11 @@ const CardItem = ({
       radius="md"
       shadow="none"
       isPressable
-      className="aspect-square relative w-full z-10 bg-transparent select-none p-1"
+      className="aspect-square relative w-full z-10 select-none p-1 bg-transparent"
       onPress={() => router.push(url)}
     >
-      <CardHeader className="p-0">
-        <Image
-          src={icon}
-          alt={icon.split("-").join(" ")}
-          className="w-10/12 md:w-8/12 aspect-square m-auto"
-          draggable={false}
-        />
+      <CardHeader className="w-10/12 aspect-square m-auto p-0 sm:p-2 relative">
+        <Image src={icon} alt={title} draggable={false} />
       </CardHeader>
       <CardFooter className="justify-center px-2">
         <p className="capitalize truncate text-xs md:text-small text-default-800">
@@ -52,7 +47,7 @@ export function Screen() {
   ];
 
   return (
-    <div className="grid grid-cols-4 p-4 gap-x-4 gap-y-6 md:grid-cols-12">
+    <div className="grid grid-cols-4 p-4 gap-x-4 gap-y-6 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 2xl:grid-cols-12">
       {apps.map((item) => {
         return (
           <CardItem
