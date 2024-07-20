@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "@/navigation";
-import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 import { Card, Image } from "@nextui-org/react";
 
 export const Dock = () => {
@@ -18,32 +17,6 @@ export const Dock = () => {
         >
           <Image src="/icons/about-xstools.svg" className="w-full h-full" />
         </Card>
-        <div className="flex justify-center items-center">
-          <SignedOut>
-            <SignInButton>
-              <Card
-                aria-label="SignIn button"
-                isPressable
-                className="w-12 h-12 p-0 bg-transparent"
-              >
-                <Image
-                  alt="SignIn button"
-                  src="/icons/profile.svg"
-                  className="w-full h-full"
-                />
-              </Card>
-            </SignInButton>
-          </SignedOut>
-          <SignedIn>
-            <UserButton
-              appearance={{
-                elements: {
-                  userButtonAvatarBox: "w-12 h-12",
-                },
-              }}
-            />
-          </SignedIn>
-        </div>
       </div>
     </header>
   );
