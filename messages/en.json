@@ -47,7 +47,10 @@
     "title": "Check Webcam",
     "description": "Instantly Test and Verify Your Webcam’s Functionality",
     "stop-webcam": "Stop webcam",
-    "check-my-webcam": "Check my webcam"
+    "check-my-webcam": "Check my webcam",
+    "tips": "It looks like your browser is blocking access to webcam identifiers. Because of this, it’s impossible to detect and manage all available webcams.",
+    "tips-btn": "Click here to allow access to webcam identifiers",
+    "select-a-webcam": "Select a webcam"
   },
   "LengthUnitConverter": {
     "title": "Length Unit Converter",

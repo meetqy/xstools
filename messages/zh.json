@@ -47,7 +47,10 @@
     "description": "在线检查摄像头是否损坏",
     "title": "检查网络摄像头",
     "stop-webcam": "停止检测",
-    "check-my-webcam": "开始检查摄像头"
+    "check-my-webcam": "开始检查摄像头",
+    "tips": "您的浏览器似乎阻止了对网络摄像头的访问，因此不能检测摄像头是否正常。",
+    "tips-btn": "单击此处允许访问网络摄像头",
+    "select-a-webcam": "选择网络摄像头"
   },
   "LengthUnitConverter": {
     "title": "长度单位转换器",
