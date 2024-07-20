@@ -9,16 +9,10 @@ import { useParams } from "next/navigation";
 import { useRouter } from "@/navigation";
 import { Locale } from "@/config/locale";
 
-const languages = {
-  en: [
-    { icon: "🇨🇳", name: "Chinese", abbr: "zh" },
-    { icon: "🇺🇸", name: "English", abbr: "en" },
-  ],
-  zh: [
-    { icon: "🇨🇳", name: "中文", abbr: "zh" },
-    { icon: "🇺🇸", name: "英文", abbr: "en" },
-  ],
-};
+const languages = [
+  { icon: "🇨🇳", name: "中文", abbr: "zh" },
+  { icon: "🇺🇸", name: "English", abbr: "en" },
+];
 
 export default function App() {
   const t = useTranslations("About");
@@ -51,11 +45,11 @@ export default function App() {
             onChange={(e) => {
               const lang = e.target.value as Locale;
 
-              router.replace("/about-xstools", { locale: lang });
+              router.replace("/about", { locale: lang });
             }}
             variant="bordered"
           >
-            {languages[locale]?.map((lang) => (
+            {languages.map((lang) => (
               <SelectItem
                 key={lang.abbr}
                 value={lang.abbr}

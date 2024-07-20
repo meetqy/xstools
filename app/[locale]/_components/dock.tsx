@@ -14,7 +14,7 @@ export const Dock = () => {
           isPressable
           className="w-12 h-12 p-0 bg-transparent"
           aria-label="about xs tools"
-          onPress={() => router.push("/about-xstools")}
+          onPress={() => router.push("/about")}
         >
           <Image src="/icons/about-xstools.svg" className="w-full h-full" />
         </Card>
