@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "@/navigation";
+import { Link } from "@/navigation";
 import { Card, CardHeader, CardFooter, Image } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 
@@ -13,15 +13,14 @@ const CardItem = ({
   title: string;
   url: string;
 }) => {
-  const router = useRouter();
-
   return (
     <Card
       radius="md"
       shadow="none"
       isPressable
       className="aspect-square relative w-full z-10 select-none p-1 bg-transparent"
-      onPress={() => router.push(url)}
+      href={url}
+      as={Link}
     >
       <CardHeader className="w-10/12 aspect-square m-auto p-0 sm:p-2 relative">
         <Image src={icon} alt={title} draggable={false} />
