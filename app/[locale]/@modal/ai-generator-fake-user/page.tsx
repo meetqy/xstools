@@ -17,6 +17,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 import { User } from "./data";
+import { jsonValuesToString } from "@/utils/jsonValuesToString";
+import toast from "react-hot-toast";
 
 const options = {
   en: "United States",
@@ -83,6 +85,30 @@ export default function Page() {
           >
             {run.isPending ? t("generating") : t("generate")}
           </Button>
+          <div className="col-span-2 border-l pl-4 flex gap-2">
+            <Button
+              variant="flat"
+              color="secondary"
+              onPress={() => {
+                if (!data) return;
+                navigator.clipboard.writeText(JSON.stringify(data, null, 2));
+                toast.success("Copied!");
+              }}
+            >
+              {t("copy-json")}
+            </Button>
+            <Button
+              variant="flat"
+              color="secondary"
+              onPress={() => {
+                if (!data) return;
+                navigator.clipboard.writeText(jsonValuesToString(data));
+                toast.success("Copied!");
+              }}
+            >
+              {t("copy-text")}
+            </Button>
+          </div>
         </div>
 
         {data && (

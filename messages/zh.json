@@ -118,6 +118,8 @@
     "school-admission-date": "入学日期",
     "school-graduation-date": "毕业日期",
     "generate": "生成",
-    "generating": "生成中..."
+    "generating": "生成中...",
+    "copy-json": "复制 JSON",
+    "copy-text": "复制文本"
   }
 }

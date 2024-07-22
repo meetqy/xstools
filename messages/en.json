@@ -118,6 +118,8 @@
     "school-admission-date": "Admission Date",
     "school-graduation-date": "Graduation Date",
     "generate": "Generate",
-    "generating": "Generating..."
+    "generating": "Generating...",
+    "copy-json": "Copy JSON",
+    "copy-text": "Copy Text"
   }
 }
