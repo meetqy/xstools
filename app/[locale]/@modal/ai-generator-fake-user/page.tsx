@@ -23,7 +23,7 @@ const options = {
 };
 
 export default function Page() {
-  const t = useTranslations("AIGeneratorFakeUser");
+  const t = useTranslations("AiGeneratorFakeUser");
   const locale = useLocale();
 
   const run = api.aiGeneratorFakeUser.run.useMutation();

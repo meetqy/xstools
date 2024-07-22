@@ -101,7 +101,7 @@
     "avoirdupois-system": "Avoirdupois system",
     "chinese-unit-of-weight": "Chinese unit of weight"
   },
-  "AIGeneratorFakeUser": {
+  "AiGeneratorFakeUser": {
     "title": "AI Generator Fake User",
     "description": "Randomly generate your identity information, which can be used when registering information."
   }

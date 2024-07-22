@@ -41,7 +41,6 @@ interface School {
       },
     });
 
-    console.log(output);
     return output as string[];
   }),
 });
