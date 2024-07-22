@@ -23,6 +23,8 @@ import toast from "react-hot-toast";
 const options = {
   en: "United States",
   zh: "china",
+  ko: "Korea",
+  ja: "Japan",
 };
 
 export default function Page() {
@@ -74,6 +76,8 @@ export default function Page() {
           >
             <SelectItem key="en">{"United States"}</SelectItem>
             <SelectItem key="zh">{"中国"}</SelectItem>
+            <SelectItem key="ko">{"한국어"}</SelectItem>
+            <SelectItem key="ja">{"日本語"}</SelectItem>
           </Select>
           <Button
             color="primary"

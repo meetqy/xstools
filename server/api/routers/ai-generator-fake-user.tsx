@@ -15,7 +15,7 @@ export const aiGeneratorFakeUser = createTRPCRouter({
   birth_date: string;
   age: number;
   gender: string;
-  // 现居地 x 省 x 市 x 区 x 街道 x 号
+  // Detailed address
   residence: string;
   hometown: string;
   phone: string;
@@ -32,7 +32,7 @@ interface School {
   graduation_date: string;
   name: string;
 }
-生成一个 ${input} 用户信息，要求真实。只返回 json，不要开始和结束的提示语。`,
+Generate a ${input} user profile, ensuring realism and output "${input}" language. Return JSON only, without beginning and ending prompts.`,
         min_tokens: 0,
         temperature: 0.6,
         prompt_template:
