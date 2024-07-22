@@ -1,5 +1,6 @@
 import { aiSlugGenerator } from "@/server/api/routers/ai-slug-generator";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
+import { aiGeneratorFakeUser } from "./routers/ai-generator-fake-user";
 
 /**
  * This is the primary router for your server.
@@ -8,6 +9,7 @@ import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
   aiSlugGenerator,
+  aiGeneratorFakeUser,
 });
 
 // export type definition of API

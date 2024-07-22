@@ -44,6 +44,7 @@ export function Screen() {
     "check-webcam",
     "length-unit-converter",
     "weight-unit-converter",
+    "ai-generator-fake-user",
   ];
 
   return (

@@ -5,7 +5,8 @@
     "ai-slug-generator": "AI url-slug 生成器",
     "check-webcam": "检查网络摄像头",
     "length-unit-converter": "长度单位转换器",
-    "weight-unit-converter": "重量单位转换器"
+    "weight-unit-converter": "重量单位转换器",
+    "fake-user-generator": "虚拟用户生成器"
   },
   "About": {
     "description": "提供一系列实用的小工具，帮助你轻松解决各种日常问题",
