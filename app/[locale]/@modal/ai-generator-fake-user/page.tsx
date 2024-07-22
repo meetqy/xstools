@@ -33,8 +33,9 @@ export default function Page() {
 
   const run = api.aiGeneratorFakeUser.run.useMutation({
     onSuccess(data) {
-      setHistory(JSON.parse(data.join("")));
-      setData(JSON.parse(data.join("")));
+      data = data.replace("```json", "").replace("```", "");
+      setHistory(JSON.parse(data));
+      setData(JSON.parse(data));
     },
   });
   const [country, setCountry] = useState<string>(locale);
