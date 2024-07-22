@@ -163,6 +163,13 @@ export default function Page() {
                 value={data.phone}
               />
               <Input
+                label={"Email"}
+                variant="faded"
+                labelPlacement="outside"
+                placeholder=" "
+                value={data.email}
+              />
+              <Input
                 label={t("residence")}
                 variant="faded"
                 labelPlacement="outside"

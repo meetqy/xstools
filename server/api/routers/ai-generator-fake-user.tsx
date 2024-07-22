@@ -25,6 +25,7 @@ export const aiGeneratorFakeUser = createTRPCRouter({
   gender: string;
   // Detailed address
   residence: string;
+  email: string;
   hometown: string;
   phone: string;
   schools: {

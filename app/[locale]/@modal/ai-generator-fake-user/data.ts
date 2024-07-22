@@ -4,8 +4,9 @@ export interface User {
   birth_date: string;
   age: number;
   gender: string;
-  // 现居地 x 省 x 市 x 区 x 街道 x 号
+  // 详细地址
   residence: string;
+  email: string;
   hometown: string;
   phone: string;
   schools: {
