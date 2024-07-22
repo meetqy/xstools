@@ -100,5 +100,24 @@
     "metric-system": "公制系统",
     "avoirdupois-system": "常衡制",
     "chinese-unit-of-weight": "中国重量单位"
+  },
+  "AiGeneratorFakeUser": {
+    "title": "AI 生成虚拟用户",
+    "description": "随机生成身份信息，可用于注册信息。",
+    "name": "姓名",
+    "birthdate": "出生日期",
+    "age": "年龄",
+    "gender": "性别",
+    "id-card-number": "身份证号码",
+    "phone": "电话",
+    "residence": "居住地",
+    "hometown": "籍贯",
+    "schools": "学校",
+    "schools-stage": "阶段",
+    "schools-name": "名称",
+    "school-admission-date": "入学日期",
+    "school-graduation-date": "毕业日期",
+    "generate": "生成",
+    "generating": "生成中..."
   }
 }

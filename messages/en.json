@@ -103,6 +103,21 @@
   },
   "AiGeneratorFakeUser": {
     "title": "AI Generator Fake User",
-    "description": "Randomly generate your identity information, which can be used when registering information."
+    "description": "Randomly generate your identity information, which can be used when registering information.",
+    "name": "Name",
+    "birthdate": "Birthdate",
+    "age": "Age",
+    "gender": "Gender",
+    "id-card-number": "ID Card Number",
+    "phone": "Phone",
+    "residence": "Residence",
+    "hometown": "Hometown",
+    "schools": "Schools",
+    "schools-stage": "Stage",
+    "schools-name": "NAME",
+    "school-admission-date": "Admission Date",
+    "school-graduation-date": "Graduation Date",
+    "generate": "Generate",
+    "generating": "Generating..."
   }
 }

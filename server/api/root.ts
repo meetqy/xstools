@@ -1,6 +1,7 @@
-import { aiSlugGenerator } from "@/server/api/routers/ai-slug-generator";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
-import { aiGeneratorFakeUser } from "./routers/ai-generator-fake-user";
+
+import { aiSlugGenerator } from "@/server/api/routers/ai-slug-generator";
+import { aiGeneratorFakeUser } from "@/server/api/routers/ai-generator-fake-user";
 
 /**
  * This is the primary router for your server.

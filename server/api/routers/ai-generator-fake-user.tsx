@@ -32,7 +32,7 @@ interface School {
   graduation_date: string;
   name: string;
 }
-生成一个 ${input} 用户信息，要求真实。只返回结果，不要提示语。`,
+生成一个 ${input} 用户信息，要求真实。只返回 json，不要开始和结束的提示语。`,
         min_tokens: 0,
         temperature: 0.6,
         prompt_template:

@@ -14,8 +14,9 @@ import {
   TableRow,
 } from "@nextui-org/react";
 import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import { User } from "./data";
-import { useState } from "react";
 
 const options = {
   en: "United States",
@@ -26,10 +27,27 @@ export default function Page() {
   const t = useTranslations("AiGeneratorFakeUser");
   const locale = useLocale();
 
-  const run = api.aiGeneratorFakeUser.run.useMutation();
+  const run = api.aiGeneratorFakeUser.run.useMutation({
+    onSuccess(data) {
+      setHistory(JSON.parse(data.join("")));
+      setData(JSON.parse(data.join("")));
+    },
+  });
   const [country, setCountry] = useState<string>(locale);
+  const [history, setHistory] = useLocalStorage<User | undefined>(
+    "ai-generator-fake-user",
+    undefined
+  );
+  const [data, setData] = useState<User>();
 
-  const data = run.data as User | undefined;
+  useEffect(() => {
+    if (history) {
+      setData(history);
+      return;
+    }
+
+    run.mutate(options[country as keyof typeof options]);
+  }, []);
 
   return (
     <ModalPage
@@ -52,17 +70,18 @@ export default function Page() {
             onChange={(e) => setCountry(e.target.value)}
             size="sm"
           >
-            <SelectItem key="en">United States</SelectItem>
-            <SelectItem key="zh">中国</SelectItem>
+            <SelectItem key="en">{"United States"}</SelectItem>
+            <SelectItem key="zh">{"中国"}</SelectItem>
           </Select>
           <Button
             color="primary"
+            isLoading={run.isPending}
             onPress={() => {
               const item = options[country as keyof typeof options];
               run.mutate(item);
             }}
           >
-            Generator
+            {run.isPending ? t("generating") : t("generate")}
           </Button>
         </div>
 
@@ -71,56 +90,56 @@ export default function Page() {
             {/* 基础信息 */}
             <section className="grid md:grid-cols-4 grid-cols-2 gap-4">
               <Input
-                label="Name"
+                label={t("name")}
                 variant="faded"
                 labelPlacement="outside"
                 placeholder=" "
                 value={data.name}
               />
               <Input
-                label="Birthdate"
+                label={t("birthdate")}
                 variant="faded"
                 labelPlacement="outside"
                 placeholder=" "
                 value={data.birth_date}
               />
               <Input
-                label="Age"
+                label={t("age")}
                 variant="faded"
                 labelPlacement="outside"
                 placeholder=" "
                 value={data.age.toString()}
               />
               <Input
-                label="Gender"
+                label={t("gender")}
                 variant="faded"
                 labelPlacement="outside"
                 placeholder=" "
                 value={data.gender}
               />
               <Input
-                label="ID Card Number"
+                label={t("id-card-number")}
                 variant="faded"
                 labelPlacement="outside"
                 placeholder=" "
                 value={data.id_card}
               />
               <Input
-                label="Phone"
+                label={t("phone")}
                 variant="faded"
                 labelPlacement="outside"
                 placeholder=" "
                 value={data.phone}
               />
               <Input
-                label="Residence"
+                label={t("residence")}
                 variant="faded"
                 labelPlacement="outside"
                 placeholder=" "
                 value={data.residence}
               />
               <Input
-                label="Hometown"
+                label={t("hometown")}
                 variant="faded"
                 labelPlacement="outside"
                 placeholder=" "
@@ -128,13 +147,13 @@ export default function Page() {
               />
             </section>
             {/* 学业 */}
-            <p className="border-b text-primary">Schools</p>
+            <p className="border-b text-primary">{t("schools")}</p>
             <Table aria-label="Fake user schools table" isStriped>
               <TableHeader>
-                <TableColumn>Stage</TableColumn>
-                <TableColumn>NAME</TableColumn>
-                <TableColumn>Admission Date</TableColumn>
-                <TableColumn>Graduation Date</TableColumn>
+                <TableColumn>{t("schools-stage")}</TableColumn>
+                <TableColumn>{t("schools-name")}</TableColumn>
+                <TableColumn>{t("school-admission-date")}</TableColumn>
+                <TableColumn>{t("school-graduation-date")}</TableColumn>
               </TableHeader>
               <TableBody>
                 {["elementary", "middle", "high", "university"].map((stage) => {
