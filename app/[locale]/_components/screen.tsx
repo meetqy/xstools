@@ -23,7 +23,7 @@ const CardItem = ({
       as={Link}
     >
       <CardHeader className="w-10/12 aspect-square m-auto p-0 sm:p-2 relative">
-        <Image src={icon} alt={title} draggable={false} />
+        <Image src={icon} alt={title + " icon in screen"} draggable={false} />
       </CardHeader>
       <CardFooter className="justify-center px-2">
         <p className="capitalize truncate text-xs md:text-small text-default-800">

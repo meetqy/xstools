@@ -15,7 +15,11 @@ export const Dock = () => {
           aria-label="about xs tools"
           onPress={() => router.push("/about")}
         >
-          <Image src="/icons/about-xstools.svg" className="w-full h-full" />
+          <Image
+            alt="about icon in dock"
+            src="/icons/about-xstools.svg"
+            className="w-full h-full"
+          />
         </Card>
       </div>
     </header>
