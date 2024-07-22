@@ -40,7 +40,7 @@ interface School {
   graduation_date: string;
   name: string;
 }
-随机生成 ${input} 用户信息，不要使用连续的数字。只输出 json ，不需要开头和结束提示。`,
+随机生成 "${input}" 用户信息并输出 "${input}" 的语言，不要使用连续的数字。只输出 json ，不需要开头和结束提示。`,
           },
         ],
       }),
