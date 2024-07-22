@@ -144,9 +144,7 @@ export default function Page() {
           })}
         </section>
 
-        <p className="border-b text-primary">
-          {t("the-chinese-system-of-weights-and-measures")}
-        </p>
+        <p className="border-b text-primary">{t("chinese-unit-of-length")}</p>
         <section className="grid md:grid-cols-4 grid-cols-2 gap-4">
           {Object.keys(chinese).map((key) => {
             const item = chinese[key as Unit];
