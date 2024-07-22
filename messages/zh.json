@@ -4,7 +4,8 @@
     "extract-palette-from-image": "从图像中提取调色板",
     "ai-slug-generator": "AI url-slug 生成器",
     "check-webcam": "检查网络摄像头",
-    "length-unit-converter": "长度单位转换器"
+    "length-unit-converter": "长度单位转换器",
+    "weight-unit-converter": "重量单位转换器"
   },
   "About": {
     "description": "提供一系列实用的小工具，帮助你轻松解决各种日常问题",
@@ -57,7 +58,7 @@
     "description": "快速转换不同长度单位",
     "metric-system": "公制",
     "british-system": "英制",
-    "the-chinese-system-of-weights-and-measures": "中国的重量和度量衡系统",
+    "chinese-unit-of-length": "中国长度单位",
     "kilometre": "千米",
     "meter": "米",
     "decimeter": "分米",
@@ -81,5 +82,22 @@
     "fen": "分",
     "li": "厘",
     "hao": "毫"
+  },
+  "WeightUnitConverter": {
+    "ton": "吨",
+    "kilogram": "千克",
+    "gram": "克",
+    "milligram": "毫克",
+    "microgram": "微克",
+    "picogram": "皮克",
+    "pound": "磅",
+    "ounce": "盎司",
+    "dram": "打兰",
+    "grain": "格令",
+    "title": "重量单位转换器",
+    "description": "轻松转换不同重量单位，重量单位换算",
+    "metric-system": "公制系统",
+    "avoirdupois-system": "常衡制",
+    "chinese-unit-of-weight": "中国重量单位"
   }
 }

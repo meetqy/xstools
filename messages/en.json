@@ -4,7 +4,8 @@
     "extract-palette-from-image": "Extract Palette From Image",
     "ai-slug-generator": "AI url-slug Generator",
     "check-webcam": "Check Webcam",
-    "length-unit-converter": "Length Unit Converter"
+    "length-unit-converter": "Length Unit Converter",
+    "weight-unit-converter": "Weight Unit Converter"
   },
   "About": {
     "title": "xs.tools",
@@ -57,7 +58,7 @@
     "description": "Quickly Convert Between Different Units of Length",
     "metric-system": "Metric System",
     "british-system": "British System",
-    "the-chinese-system-of-weights-and-measures": "The Chinese system of weights and measures",
+    "chinese-unit-of-length": "Chinese unit of length",
     "kilometre": "kilometre",
     "meter": "meter",
     "decimeter": "decimeter",
@@ -81,5 +82,22 @@
     "fen": "分",
     "li": "里",
     "hao": "毫"
+  },
+  "WeightUnitConverter": {
+    "ton": "ton",
+    "kilogram": "kilogram",
+    "gram": "gram",
+    "milligram": "milligram",
+    "microgram": "microgram",
+    "picogram": "picogram",
+    "pound": "pound",
+    "ounce": "ounce",
+    "dram": "dram",
+    "grain": "grain",
+    "title": "Weight unit converter",
+    "description": "Easily Convert Between Various Units of Weight",
+    "metric-system": "Metric system",
+    "avoirdupois-system": "Avoirdupois system",
+    "chinese-unit-of-weight": "Chinese unit of weight"
   }
 }

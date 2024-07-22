@@ -43,6 +43,7 @@ export function Screen() {
     "ai-slug-generator",
     "check-webcam",
     "length-unit-converter",
+    "weight-unit-converter",
   ];
 
   return (
