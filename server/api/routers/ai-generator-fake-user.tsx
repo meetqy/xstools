@@ -24,6 +24,7 @@ export const aiGeneratorFakeUser = createTRPCRouter({
   age: number;
   gender: string;
   residence: string;
+  // 不要使用 example.com
   email: string;
   hometown: string;
   phone: string;
@@ -40,7 +41,7 @@ interface School {
   graduation_date: string;
   name: string;
 }
-随机生成 "${input}" 用户信息并输出 "${input}" 的语言，数字使用随机数，email 不要使用 example。只输出 json ，不需要开头和结束提示。`,
+随机生成 "${input}" 用户信息并输出 "${input}" 的语言。只输出 json ，不需要开头和结束提示。`,
           },
         ],
       }),
