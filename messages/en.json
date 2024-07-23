@@ -6,7 +6,8 @@
     "check-webcam": "Check Webcam",
     "length-unit-converter": "Length Unit Converter",
     "weight-unit-converter": "Weight Unit Converter",
-    "ai-generator-fake-user": "AI Generator Fake User"
+    "ai-generator-fake-user": "AI Generator Fake User",
+    "purple-star-astrology": "Purple Star Astrology"
   },
   "About": {
     "title": "xs.tools",
@@ -121,5 +122,9 @@
     "generating": "Generating...",
     "copy-json": "Copy JSON",
     "copy-text": "Copy Text"
+  },
+  "PurpleStarAstrology": {
+    "title": "Purple Star Astrology",
+    "description": "Purple Star Astrology is a Chinese astrology system that predicts a person's fate and fortune based on the position of the stars at the time of birth."
   }
 }

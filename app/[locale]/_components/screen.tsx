@@ -45,6 +45,7 @@ export function Screen() {
     "length-unit-converter",
     "weight-unit-converter",
     "ai-generator-fake-user",
+    "purple-star-astrology",
   ];
 
   return (
