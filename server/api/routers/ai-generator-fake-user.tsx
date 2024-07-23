@@ -12,7 +12,7 @@ export const aiGeneratorFakeUser = createTRPCRouter({
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "mistralai/mixtral-8x7b-instruct",
+        model: "openai/gpt-4o-mini-2024-07-18",
         messages: [
           {
             role: "user",
