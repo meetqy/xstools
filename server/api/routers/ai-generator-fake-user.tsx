@@ -23,6 +23,7 @@ export const aiGeneratorFakeUser = createTRPCRouter({
   birth_date: string;
   age: number;
   gender: string;
+  // 详细地址
   residence: string;
   // 不要使用 example.com
   email: string;
