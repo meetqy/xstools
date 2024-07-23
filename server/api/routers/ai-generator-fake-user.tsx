@@ -16,14 +16,14 @@ export const aiGeneratorFakeUser = createTRPCRouter({
         messages: [
           {
             role: "user",
-            content: `
+            content: `input=${input}
           export interface User {
   id_card: string;
   name: string;
   birth_date: string;
   age: number;
   gender: string;
-  // 详细地址
+  // 使用详细地址
   residence: string;
   // 不要使用 example.com
   email: string;
@@ -42,7 +42,7 @@ interface School {
   graduation_date: string;
   name: string;
 }
-随机生成 "${input}" 用户信息并输出 "${input}" 的语言。只输出 json ，不需要开头和结束提示。`,
+随机生成 \${input} 用户信息并输出 \${input} 的语言。只输出 json ，不需要开头和结束提示。`,
           },
         ],
       }),
