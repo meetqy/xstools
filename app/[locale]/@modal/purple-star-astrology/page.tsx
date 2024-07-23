@@ -4,15 +4,17 @@ import { ModalPage } from "@/components/modal-page";
 import {
   Button,
   DateInput,
-  Radio,
-  RadioGroup,
+  // Radio,
+  // RadioGroup,
   Select,
   SelectItem,
 } from "@nextui-org/react";
 import { useLocale, useTranslations } from "next-intl";
 import { astro } from "iztro";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CalendarDate } from "@internationalized/date";
+import { Icon } from "@iconify/react";
+import FunctionalAstrolabe from "iztro/lib/astro/FunctionalAstrolabe";
 
 const langs = {
   en: "en-US",
@@ -24,21 +26,28 @@ export default function Page() {
   const locale = useLocale();
 
   const [params, setParams] = useState({
-    birthday: [2024, 7, 23],
+    birthday: [1990, 1, 1],
     country: langs[locale as keyof typeof langs],
     gender: "",
   });
 
+  const [astrolabe, setAstrolabe] = useState<FunctionalAstrolabe>();
+
   const getAstro = () => {
-    const astrolabe = astro.bySolar(
+    const _astrolabe = astro.bySolar(
       params.birthday.join("-"),
       2,
       params.gender as "男" | "女",
       true,
       params.country as "en-US" | "zh-CN"
     );
-    console.log(params.gender, astrolabe);
+
+    setAstrolabe(_astrolabe);
   };
+
+  useEffect(() => {
+    getAstro();
+  }, []);
 
   const dateValue = new CalendarDate(
     params.birthday[0],
@@ -57,8 +66,8 @@ export default function Page() {
         </>
       }
     >
-      <div className="grid grid-cols-3 gap-4">
-        <div className="col-span-1 grid gap-4 bg-content2 p-4 shadow-medium rounded-medium">
+      <div className="grid md:grid-cols-3 max-w-5xl w-full gap-4 mx-auto">
+        <div className="md:col-span-1 grid gap-4 bg-content2 p-4 shadow-medium rounded-medium">
           <DateInput
             label="Birthday"
             variant="bordered"
@@ -84,7 +93,7 @@ export default function Page() {
             <SelectItem key="en-US">{"United States"}</SelectItem>
             <SelectItem key="zh-CN">{"中国"}</SelectItem>
           </Select>
-          <RadioGroup
+          {/* <RadioGroup
             label="Select Gender"
             orientation="horizontal"
             onChange={(e) => {
@@ -93,7 +102,7 @@ export default function Page() {
           >
             <Radio value={"女"}>Female</Radio>
             <Radio value={"男"}>Male</Radio>
-          </RadioGroup>
+          </RadioGroup> */}
           <Button
             className="ml-auto"
             fullWidth
@@ -104,7 +113,70 @@ export default function Page() {
           </Button>
         </div>
 
-        <div className="col-span-2"></div>
+        {astrolabe && (
+          <div className="md:col-span-2 text-center rounded-medium border p-4 bg-background">
+            <h2 className="text-large font-medium border-dashed border-b pb-4">
+              <span className="flex items-center">
+                <Icon
+                  icon={"material-symbols:female"}
+                  className="text-secondary w-6 h-6 relative -top-[1px]"
+                />{" "}
+                基本信息
+              </span>
+            </h2>
+
+            <div className="grid md:grid-cols-2 py-4 gap-2 text-left">
+              <div className="grid grid-cols-4">
+                <span className="text-default-500">{"五行局"}</span>
+                <span className="text-primary col-span-3">
+                  {astrolabe.fiveElementsClass}
+                </span>
+              </div>
+              <div className="grid grid-cols-4">
+                <span className="text-default-500">{"四柱"}</span>
+                <span className="text-primary col-span-3">
+                  {astrolabe.chineseDate.replace(/\s-\s/g, ",")}
+                </span>
+              </div>
+              <div className="grid grid-cols-4">
+                <span className="text-default-500">{"农历"}</span>
+                <span className="text-primary col-span-3">
+                  {astrolabe.lunarDate}
+                </span>
+              </div>
+              <div className="grid grid-cols-4">
+                <span className="text-default-500">{"阳历"}</span>
+                <span className="text-primary col-span-3">
+                  {astrolabe.solarDate}
+                </span>
+              </div>
+              <div className="grid grid-cols-4">
+                <span className="text-default-500">{"年龄"}</span>
+                <span className="text-primary col-span-3">
+                  {new Date().getFullYear() - params.birthday[0] + 1}
+                </span>
+              </div>
+              <div className="grid grid-cols-4">
+                <span className="text-default-500">{"生肖"}</span>
+                <span className="text-primary col-span-3">
+                  {astrolabe.zodiac}
+                </span>
+              </div>
+              {/* <div className="grid grid-cols-4">
+                <span className="text-default-500">时辰</span>
+                <span className="text-primary col-span-3">
+                  {astrolabe.time} {astrolabe.timeRange}
+                </span>
+              </div> */}
+              <div className="grid grid-cols-4">
+                <span className="text-default-500">{"星座"}</span>
+                <span className="text-primary col-span-3">
+                  {astrolabe.sign}
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </ModalPage>
   );
