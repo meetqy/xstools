@@ -126,6 +126,7 @@
   "PurpleStarAstrology": {
     "description": "紫星占星学是一种中国占星学体系，根据一个人出生时星星的位置来预测他的命运和财富。",
     "title": "紫星占星术",
-    "get-astro": "获取结果"
+    "get-astro": "获取结果",
+    "basic-information": "基本信息"
   }
 }

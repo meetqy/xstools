@@ -114,7 +114,7 @@ export default function Page() {
                   icon={"material-symbols:female"}
                   className="text-secondary w-6 h-6 relative -top-[1px]"
                 />{" "}
-                基本信息
+                {t("basic-information")}
               </span>
             </h2>
 
