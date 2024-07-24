@@ -125,6 +125,7 @@
   },
   "PurpleStarAstrology": {
     "title": "Purple Star Astrology",
-    "description": "Purple Star Astrology is a Chinese astrology system that predicts a person's fate and fortune based on the position of the stars at the time of birth."
+    "description": "Purple Star Astrology is a Chinese astrology system that predicts a person's fate and fortune based on the position of the stars at the time of birth.",
+    "get-astro": "Get Astro"
   }
 }

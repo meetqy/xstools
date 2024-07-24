@@ -102,7 +102,7 @@ export default function Page() {
             color="primary"
             onPress={getAstro}
           >
-            Get Astro
+            {t("get-astro")}
           </Button>
         </div>
 
