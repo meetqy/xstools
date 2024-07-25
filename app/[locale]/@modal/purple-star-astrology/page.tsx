@@ -31,8 +31,18 @@ export default function Page() {
     onSuccess(data) {
       data = data.replace("```json", "").replace("```", "");
       data = JSON.parse(data);
+      console.log(data);
+
+      const _astrolabe = astro.bySolar(
+        params.birthday.join("-"),
+        2,
+        params.gender as "男" | "女",
+        true,
+        params.country as "en-US" | "zh-CN"
+      );
 
       setData(data);
+      setAstrolabe(_astrolabe);
     },
   });
 
@@ -49,21 +59,11 @@ export default function Page() {
   const getAstro = () => {
     if (!params.gender) return toast.error("Please select Gender");
 
-    const _astrolabe = astro.bySolar(
-      params.birthday.join("-"),
-      2,
-      params.gender as "男" | "女",
-      true,
-      params.country as "en-US" | "zh-CN"
-    );
-
     run.mutate({
       birth_date: params.birthday.join("-"),
       lang: params.country,
       gender: params.gender,
     });
-
-    setAstrolabe(_astrolabe);
   };
 
   useEffect(() => {
