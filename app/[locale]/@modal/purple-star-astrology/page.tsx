@@ -197,19 +197,21 @@ export default function Page() {
               </div>
             </div>
 
-            {data && (
-              <p className="text-warning text-left">
-                {"忌："}
-                {data.avoid.join(", ")}
-              </p>
-            )}
+            <div className="grid gap-2">
+              {data && (
+                <p className="text-warning text-left">
+                  {"忌："}
+                  {data.avoid.join(", ")}
+                </p>
+              )}
 
-            {data && (
-              <p className="text-success text-left">
-                {"宜："}
-                {data.suitable.join(", ")}
-              </p>
-            )}
+              {data && (
+                <p className="text-success text-left">
+                  {"宜："}
+                  {data.suitable.join(", ")}
+                </p>
+              )}
+            </div>
           </div>
         )}
       </div>
