@@ -47,6 +47,8 @@ export default function Page() {
   const [astrolabe, setAstrolabe] = useState<FunctionalAstrolabe>();
 
   const getAstro = () => {
+    if (!params.gender) return toast.error("Please select Gender");
+
     const _astrolabe = astro.bySolar(
       params.birthday.join("-"),
       2,
