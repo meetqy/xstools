@@ -8,6 +8,7 @@ import {
   SelectItem,
   Radio,
   RadioGroup,
+  Chip,
 } from "@nextui-org/react";
 import { useLocale, useTranslations } from "next-intl";
 import { astro } from "iztro";
@@ -80,7 +81,12 @@ export default function Page() {
     <ModalPage
       header={
         <>
-          <h1 className="text-large">{t("title")}</h1>
+          <h1 className="text-large">
+            {t("title")}
+            <Chip color="danger" className="ml-2">
+              {"Beta"}
+            </Chip>
+          </h1>
           <p className="font-normal text-default-500 text-medium">
             {t("description")}
           </p>
