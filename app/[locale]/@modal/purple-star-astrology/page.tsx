@@ -1,13 +1,22 @@
 "use client";
 
 import { ModalPage } from "@/components/modal-page";
-import { Button, DateInput, Select, SelectItem } from "@nextui-org/react";
+import {
+  Button,
+  DateInput,
+  Select,
+  SelectItem,
+  Radio,
+  RadioGroup,
+} from "@nextui-org/react";
 import { useLocale, useTranslations } from "next-intl";
 import { astro } from "iztro";
 import { useEffect, useState } from "react";
 import { CalendarDate } from "@internationalized/date";
 import { Icon } from "@iconify/react";
 import FunctionalAstrolabe from "iztro/lib/astro/FunctionalAstrolabe";
+import { api } from "@/trpc/react";
+import toast from "react-hot-toast";
 
 const langs = {
   en: "en-US",
@@ -17,6 +26,17 @@ const langs = {
 export default function Page() {
   const t = useTranslations("PurpleStarAstrology");
   const locale = useLocale();
+
+  const run = api.purpleStarAstrology.run.useMutation({
+    onSuccess(data) {
+      data = data.replace("```json", "").replace("```", "");
+      data = JSON.parse(data);
+
+      setData(data);
+    },
+  });
+
+  const [data, setData] = useState<{ suitable: string[]; avoid: string[] }>();
 
   const [params, setParams] = useState({
     birthday: [1990, 1, 1],
@@ -34,6 +54,12 @@ export default function Page() {
       true,
       params.country as "en-US" | "zh-CN"
     );
+
+    run.mutate({
+      birth_date: params.birthday.join("-"),
+      lang: params.country,
+      gender: params.gender,
+    });
 
     setAstrolabe(_astrolabe);
   };
@@ -86,16 +112,16 @@ export default function Page() {
             <SelectItem key="en-US">{"United States"}</SelectItem>
             <SelectItem key="zh-CN">{"中国"}</SelectItem>
           </Select>
-          {/* <RadioGroup
+          <RadioGroup
             label="Select Gender"
             orientation="horizontal"
             onChange={(e) => {
               setParams({ ...params, gender: e.target.value });
             }}
           >
-            <Radio value={"女"}>Female</Radio>
-            <Radio value={"男"}>Male</Radio>
-          </RadioGroup> */}
+            <Radio value={"女"}>{t("female")}</Radio>
+            <Radio value={"男"}>{t("male")}</Radio>
+          </RadioGroup>
           <Button
             className="ml-auto"
             fullWidth
@@ -168,6 +194,20 @@ export default function Page() {
                 </span>
               </div>
             </div>
+
+            {data && (
+              <p className="text-warning text-left">
+                {"忌："}
+                {data.avoid.join(", ")}
+              </p>
+            )}
+
+            {data && (
+              <p className="text-success text-left">
+                {"宜："}
+                {data.suitable.join(", ")}
+              </p>
+            )}
           </div>
         )}
       </div>
