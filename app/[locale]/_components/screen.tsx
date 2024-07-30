@@ -4,6 +4,18 @@ import { Link } from "@/navigation";
 import { Card, CardHeader, CardFooter, Image } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
 
+const beta = ["purple-star-astrology"];
+const apps = [
+  "convert-case-text",
+  "extract-palette-from-image",
+  "ai-slug-generator",
+  "check-webcam",
+  "length-unit-converter",
+  "weight-unit-converter",
+  "ai-generator-fake-user",
+  "purple-star-astrology",
+];
+
 const CardItem = ({
   icon,
   title,
@@ -27,6 +39,9 @@ const CardItem = ({
       </CardHeader>
       <CardFooter className="justify-center px-2">
         <p className="capitalize truncate text-xs md:text-small text-default-800">
+          {beta.includes(url.replace("/", "")) && (
+            <span className="text-danger font-medium ">{"beta"} </span>
+          )}
           {title}
         </p>
       </CardFooter>
@@ -36,17 +51,6 @@ const CardItem = ({
 
 export function Screen() {
   const t = useTranslations("AppName");
-
-  const apps = [
-    "convert-case-text",
-    "extract-palette-from-image",
-    "ai-slug-generator",
-    "check-webcam",
-    "length-unit-converter",
-    "weight-unit-converter",
-    "ai-generator-fake-user",
-    "purple-star-astrology",
-  ];
 
   return (
     <div className="grid grid-cols-4 p-4 gap-x-4 gap-y-6 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 2xl:grid-cols-12">

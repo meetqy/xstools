@@ -55,11 +55,11 @@ export default async function RootLayout({
       <Head />
       <body
         className={clsx(
-          "h-screen bg-background font-sans antialiased w-screen overflow-hidden bg-cover text-foreground",
+          "h-screen bg-warning font-sans antialiased w-screen overflow-hidden bg-cover text-foreground",
           fontSans.variable
         )}
         style={{
-          backgroundImage: `url(https://images.unsplash.com/photo-1718348636186-5620c97d4c1f?q=80&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`,
+          backgroundImage: `url(https://images.unsplash.com/photo-1718348636186-5620c97d4c1f?q=20&w=1920&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`,
         }}
       >
         <NextIntlClientProvider messages={messages}>
